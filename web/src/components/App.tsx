@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App: React.FC = () => {
+const App: React.FC = function () {
     return (
         <div id="app">
             asdf
