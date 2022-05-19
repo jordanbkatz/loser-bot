@@ -4,16 +4,12 @@ import axios from 'axios';
 const Kanye: Command = async function ({ bot }) {
     const res = new bot.discord.MessageEmbed();
     try {
-        const quote = await axios.get('https://api.kanye.rest/');
-        res.setTitle("Kanye");
-        res.setDescription(`"${quote.data.quote}"`);
+        const quote = await axios.get("https://api.kanye.rest/");
+        return res.setTitle("Kanye").setDescription(`"${quote.data.quote}"`);
     }
     catch (err) {
         console.log(err);
-        res.setTitle("Error");
-    }
-    finally {
-        return res;
+        return res.setTitle("failed to fetch Kanye quote");
     }
 };
 

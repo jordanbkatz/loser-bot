@@ -1,28 +1,20 @@
 import fs from 'fs';
 import path from 'path';
 import Discord from 'discord.js';
-import Command from './Command';
+import { Command } from './interfaces';
 
 class Bot extends Discord.Client {
     discord: typeof Discord = Discord;
     commands: Discord.Collection<string, Command> = new Discord.Collection();
-    constructor() {
-        super({intents: new Discord.Intents(32767)});
-        this.on('ready', this.ready);
-        this.on('message', this.message)
-        this.login(process.env.TOKEN);
-    }
-    ready() {
-        console.log(`logged in as ${this.user?.tag}!`);
-    }
-    async message(message: Discord.Message) {
-        
+    constructor () {
+        super();
+        this.registerCommands();
     }
     async registerCommands() {
-        const files = fs.readdirSync(path.join(__dirname, 'commands'));
+        const files = fs.readdirSync(path.join(__dirname, "commands")).map(f => f.split(".")[0]);
         for (let i = 0; i < files.length; i++) {
-            const command = await import(`../commands/${files[i]}`);
-            this.commands.set(files[i].split('.')[0], command);
+            const command = await import(`./commands/${files[i]}`);
+            this.commands.set(files[i], command.default);
         }
     }
 }

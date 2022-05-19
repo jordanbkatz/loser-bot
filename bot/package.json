@@ -5,11 +5,14 @@
     "build": "tsc -p ."
   },
   "dependencies": {
-    "@jordanbkatz/std": "^1.0.2",
+    "akaneko": "^5.2.2",
     "axios": "^0.27.2",
-    "discord.js": "^13.6.0",
+    "discord.js": "^12.5.3",
     "dotenv": "^16.0.0",
-    "mongoose": "^6.3.3"
+    "mathjs": "^10.5.3",
+    "mongoose": "^6.3.3",
+    "yt-search": "^2.10.3",
+    "ytdl-core": "^4.11.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16",
