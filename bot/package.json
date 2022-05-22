@@ -1,22 +1,20 @@
 {
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc -p ."
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "akaneko": "^5.2.2",
     "axios": "^0.27.2",
+    "bootstrap": "^5.1.3",
     "discord.js": "^12.5.3",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "mathjs": "^10.5.3",
     "mongoose": "^6.3.3",
     "yt-search": "^2.10.3",
     "ytdl-core": "^4.11.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "nodemon": "^2.0.16"
   }
 }

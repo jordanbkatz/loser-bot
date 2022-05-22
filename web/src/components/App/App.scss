@@ -1,0 +1,30 @@
+@use '../../styles/style' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+    border: none;
+    outline: none;
+    color: $text;
+    transition: all 250ms linear;
+}
+body {
+    background-color: $primary;
+}
+a {
+    text-decoration: none;
+}
+.main {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100vw;
+    &__static {
+        height: calc(100vh - 5rem);
+    }
+    &__scroll {
+        height: auto;
+    }
+}
