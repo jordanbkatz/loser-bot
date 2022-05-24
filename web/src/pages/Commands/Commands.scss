@@ -1,2 +1,33 @@
 @use '../../styles/style' as *;
 
+.commands {
+    &__search {
+        padding: 0 3rem;
+        width: 50rem;
+        background-color: $secondary;
+        display: flex;
+        align-items: center;
+        &:hover, &:hover &__input {
+            background-color: $tertiary;
+        }
+        @include tablet {
+            width: 100%;
+        }
+        @include mobile {
+            padding: 0 1.5rem;
+        }
+        &__icon {
+            font-size: 1.1rem;
+            margin-right: 1rem;
+            color: $text;
+        }
+        &__input {
+            padding: 1rem 0;
+            height: 100%;
+            width: 100%;
+            background-color: $secondary;
+            font-size: 1.1rem;
+            color: $text;
+        }
+    }
+}

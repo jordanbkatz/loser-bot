@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import Home from '../../pages/Home';
 import Commands from '../../pages/Commands';
 import Premium from '../../pages/Premium';
+import Error from '../../pages/Error';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/commands" element={<Commands />} />
                 <Route path="/premium" element={<Premium />} />
+                <Route path="*" element={<Error />} />
             </Routes>
         </Router>
     );

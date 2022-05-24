@@ -1,0 +1,38 @@
+@use '../../styles/style' as *;
+
+.command {
+    position: relative;
+    width: 50rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    background-color: $secondary;
+    color: $text;
+    @include tablet {
+        width: 100%;
+    }
+    @include mobile {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+    }
+    &__top {
+        height: 4rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__name {
+        font-size: 1.5rem;
+    }
+    &__admin {
+        padding: 1rem;
+        background-color: $accent;
+    }
+    &__description {
+        margin-bottom: 2rem;
+    }
+    &__usage {
+        padding: 1rem;
+        background-color: $tertiary;
+    }
+}

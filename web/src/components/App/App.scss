@@ -7,7 +7,8 @@
     font-family: helvetica;
     border: none;
     outline: none;
-    color: $text;
+    line-height: 1.5rem;
+    border-radius: 0.5rem;
     transition: all 250ms linear;
 }
 body {
@@ -20,11 +21,19 @@ a {
     position: absolute;
     top: 5rem;
     left: 0;
-    width: 100vw;
-    &__static {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    &--static {
         height: calc(100vh - 5rem);
     }
-    &__scroll {
+    &--scroll {
+        padding: 3rem;
         height: auto;
+        @include mobile {
+            padding: 1.5rem;
+        }
     }
 }

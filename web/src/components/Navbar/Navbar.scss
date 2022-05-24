@@ -5,15 +5,22 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     padding: 2rem 5rem;
     height: 5rem;
     background-color: $secondary;
-    @include flex(row, center, space-between);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mobile {
+        padding: 2rem;
+    }
     &__brand {
         font-weight: bold;
         font-size: 2rem;
-        @include flex(row, center, center);
+        color: $text;
+        display: flex;
+        align-items: center;
     }
     &__logo {
         margin-right: 1rem;
@@ -21,13 +28,15 @@
         height: 3rem;
     }
     &__menu {
-        @media (max-width: 900px) {
+        @include tablet {
             position: fixed;
             top: 5rem;
             left: 0;
-            width: 100vw;
+            width: 100%;
             height: calc(100vh - 5rem);
-            @include flex(column, center, space-evenly);
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
             display: none;
             background-color: $secondary;
         }
@@ -39,7 +48,7 @@
         padding: 1rem;
         margin-left: 2rem;
         font-size: 1.1rem;
-        @include round;
+        color: $text;
         &:hover {
             background-color: $tertiary;
         }
@@ -53,12 +62,13 @@
         &:hover {
             cursor: pointer;
         }
-        @media (max-width: 900px) {
-            @include flex(row, center, center);
+        @include tablet {
+            display: flex;
+            align-items: center;
         }
         &__icon {
             font-size: 2rem;
-            color: red;
+            color: $text;
         }
     }
 }
