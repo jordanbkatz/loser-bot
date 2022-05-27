@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const member = mongoose.model("member", new mongoose.Schema({
+const member = mongoose.model('member', new mongoose.Schema({
     user: String,
     guild: String,
     xp: Number,

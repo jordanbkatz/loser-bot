@@ -2,37 +2,37 @@
 
 .command {
     position: relative;
-    width: 50rem;
-    margin-top: 3rem;
-    padding: 3rem;
+    width: sz(9);
+    margin-top: sz(3);
+    padding: sz(3);
     background-color: $secondary;
-    color: $text;
     @include tablet {
         width: 100%;
     }
     @include mobile {
-        margin-top: 1.5rem;
-        padding: 1.5rem;
+        margin-top: sz(2);
+        padding: sz(2);
     }
     &__top {
-        height: 4rem;
-        margin-bottom: 1rem;
+        height: sz(3);
+        margin-bottom: sz(2);
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     &__name {
-        font-size: 1.5rem;
+        font-size: sz(2);
     }
     &__admin {
-        padding: 1rem;
+        padding: sz(1);
         background-color: $accent;
     }
     &__description {
-        margin-bottom: 2rem;
+        margin-bottom: sz(2);
+        line-height: sz(2);
     }
     &__usage {
-        padding: 1rem;
+        padding: sz(1);
         background-color: $tertiary;
     }
 }

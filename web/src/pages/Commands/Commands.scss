@@ -2,8 +2,9 @@
 
 .commands {
     &__search {
-        padding: 0 3rem;
-        width: 50rem;
+        padding: 0 sz(3);
+        width: sz(9);
+        height: sz(3);
         background-color: $secondary;
         display: flex;
         align-items: center;
@@ -14,19 +15,19 @@
             width: 100%;
         }
         @include mobile {
-            padding: 0 1.5rem;
+            padding: 0 sz(1);
         }
         &__icon {
-            font-size: 1.1rem;
-            margin-right: 1rem;
+            font-size: sz(1);
+            margin-right: sz(1);
             color: $text;
         }
         &__input {
-            padding: 1rem 0;
+            padding: sz(1) 0;
             height: 100%;
             width: 100%;
             background-color: $secondary;
-            font-size: 1.1rem;
+            font-size: sz(1);
             color: $text;
         }
     }

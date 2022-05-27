@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar';
 import Home from '../../pages/Home';
 import Commands from '../../pages/Commands';
-import Premium from '../../pages/Premium';
+import Donate from '../../pages/Donate';
 import Error from '../../pages/Error';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/commands" element={<Commands />} />
-                <Route path="/premium" element={<Premium />} />
+                <Route path="/donate" element={<Donate />} />
                 <Route path="*" element={<Error />} />
             </Routes>
         </Router>

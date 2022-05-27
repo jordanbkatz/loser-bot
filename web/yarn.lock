@@ -1464,6 +1464,28 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@paypal/paypal-js@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@paypal/paypal-js/-/paypal-js-5.0.6.tgz#92f260b54a72e2f914afb0aaac2d7124ad686117"
+  integrity sha512-q40h/Rc2Dus5p7Ctgq8EQyyqWGVCdfaezi4D5eWSIl2+p0FHL1mBA4XnXYgv9FPYejrVUmnIATdbqBdEYwasYg==
+  dependencies:
+    promise-polyfill "^8.2.3"
+
+"@paypal/react-paypal-js@^7.8.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@paypal/react-paypal-js/-/react-paypal-js-7.8.0.tgz#480c7a2391246d30b75e9f69e1525f7de0dc0f25"
+  integrity sha512-4WEhrqi5KP3c/kSaY6cAbEbsQo2zCJFbLZYwU+OqCyD258IZn0xNyLBuVAY5snrnvafgdyir7+5DY3rp8ezAKA==
+  dependencies:
+    "@paypal/paypal-js" "^5.0.6"
+    "@paypal/sdk-constants" "^1.0.116"
+
+"@paypal/sdk-constants@^1.0.116":
+  version "1.0.122"
+  resolved "https://registry.yarnpkg.com/@paypal/sdk-constants/-/sdk-constants-1.0.122.tgz#f3cd4fc67407ba5291b0f1d70693230da80feea9"
+  integrity sha512-bxML2CX9acBGuigb5aCz1E8wcxtRpuXuY2hvfQKAG9fB0zG9d8nEcRiSYavbx4n2UM5TqwEcFo/roPD3aqykOg==
+  dependencies:
+    hi-base32 "^0.5.0"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.6.tgz#9ced74cb23dae31ab385f775e237ce4c50422a1d"
@@ -4575,6 +4597,11 @@ he@^1.2.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
+hi-base32@^0.5.0:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/hi-base32/-/hi-base32-0.5.1.tgz#1279f2ddae2673219ea5870c2121d2a33132857e"
+  integrity sha512-EmBBpvdYh/4XxsnUybsPag6VikPYnN30td+vQk+GI3qpahVEG9+gTkG0aXVxTjBqQ5T6ijbWIu77O+C5WFWsnA==
+
 history@^5.2.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/history/-/history-5.3.0.tgz#1548abaa245ba47992f063a0783db91ef201c73b"
@@ -6980,6 +7007,11 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+promise-polyfill@^8.2.3:
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.2.3.tgz#2edc7e4b81aff781c88a0d577e5fe9da822107c6"
+  integrity sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg==
 
 promise@^8.1.0:
   version "8.1.0"

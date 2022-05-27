@@ -6,34 +6,34 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 5rem;
-    height: 5rem;
+    padding: sz(2) sz(4);
+    height: sz(4);
     background-color: $secondary;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: $text;
     @include mobile {
-        padding: 2rem;
+        padding: sz(2);
     }
     &__brand {
         font-weight: bold;
-        font-size: 2rem;
-        color: $text;
+        font-size: sz(2);
         display: flex;
         align-items: center;
     }
     &__logo {
-        margin-right: 1rem;
-        width: 3rem;
-        height: 3rem;
+        margin-right: sz(1);
+        width: sz(3);
+        height: sz(3);
     }
     &__menu {
         @include tablet {
             position: fixed;
-            top: 5rem;
+            top: sz(4);
             left: 0;
             width: 100%;
-            height: calc(100vh - 5rem);
+            height: calc(100vh - sz(4));
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
@@ -45,9 +45,8 @@
         }
     }
     &__link {
-        padding: 1rem;
-        margin-left: 2rem;
-        font-size: 1.1rem;
+        padding: sz(1);
+        margin-left: sz(2);
         color: $text;
         &:hover {
             background-color: $tertiary;
@@ -67,7 +66,7 @@
             align-items: center;
         }
         &__icon {
-            font-size: 2rem;
+            font-size: sz(2);
             color: $text;
         }
     }

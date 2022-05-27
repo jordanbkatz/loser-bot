@@ -24,7 +24,7 @@ client.on("message", async function (msg) {
     if (msg.author.bot) {
         return;
     }
-    if (msg.content.startsWith(process.env.PREFIX)) {
+    if (msg.content.startsWith('$loser')) {
         let res = new Discord.MessageEmbed();
 
         if ((Date.now() - last) / 1000 >= process.env.COOLDOWN) {
@@ -52,4 +52,4 @@ client.on("message", async function (msg) {
         msg.channel.send(res);
     }
 });
-client.login(config.discordToken);
+client.login(process.env.DISCORD_TOKEN);

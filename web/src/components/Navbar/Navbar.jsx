@@ -20,7 +20,7 @@ function Navbar() {
             <div className={(show) ? "navbar__menu navbar__menu__active" : "navbar__menu"}>
                 <NavLink to="/" className={navClassName}>Home</NavLink>
                 <NavLink to="/commands" className={navClassName}>Commands</NavLink>
-                <NavLink to="/premium" className={navClassName}>Premium</NavLink>
+                <NavLink to="/donate" className={navClassName}>Donate</NavLink>
             </div>
             <button className="navbar__toggle" onClick={handleToggleShow}>
                 {

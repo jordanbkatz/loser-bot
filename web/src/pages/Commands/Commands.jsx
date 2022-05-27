@@ -5,7 +5,7 @@ import data from './data.json';
 
 function Commands() {
     const [search, setSearch] = useState('');
-    const handleSearch = function (e) {
+    const handleChangeSearch = function (e) {
         setSearch(e.target.value);
     }
     const sortAlphabetical = function (a, b) {
@@ -23,7 +23,7 @@ function Commands() {
         <div className="main main--scroll commands">
             <div className="commands__search">
                 <FaSearch className="commands__search__icon" />
-                <input type="text" placeholder="search" value={search} onChange={handleSearch} className="commands__search__input" />
+                <input type="text" placeholder="search" value={search} onChange={handleChangeSearch} className="commands__search__input" />
             </div>
             {
                 data.sort(sortAlphabetical).filter(filterSearch).map((command, i) => (

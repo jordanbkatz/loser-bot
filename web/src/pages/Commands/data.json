@@ -1,43 +1,43 @@
 [
     {
         "name": "kanye",
-        "description": "Get a random Kanye West quote.",
+        "description": "Get a random Kanye West quote",
         "usage": "$loser kanye",
         "admin": false
     },
     {
         "name": "meme",
-        "description": "Get a meme from the dankmemes subreddit.",
+        "description": "Get a meme from the dankmemes subreddit",
         "usage": "$loser meme",
         "admin": false
     },
     {
         "name": "cooldown",
-        "description": "Set bot cooldown time.",
+        "description": "Set bot cooldown time",
         "usage": "$loser cooldown <seconds>",
         "admin": true
     },
     {
         "name": "play",
-        "description": "Play music or audio from a YouTube video in voice chat.",
-        "usage": "$loser play [title | url]",
+        "description": "Play music or audio from a YouTube video in voice chat",
+        "usage": "$loser play <title | url>",
         "admin": false
     },
     {
         "name": "stop",
-        "description": "Stop music or audio from a YouTube video from playing in voice chat.",
+        "description": "Stop music or audio from a YouTube video from playing in voice chat",
         "usage": "$loser stop",
         "admin": false
     },
     {
         "name": "kick",
-        "description": "Kick a user from the server.",
+        "description": "Kick a user from the server",
         "usage": "$loser kick <@user>",
         "admin": true
     },
     {
         "name": "hitler",
-        "description": "Get a random Adolf Hitler quote.",
+        "description": "Get a random Adolf Hitler quote",
         "usage": "$loser hitler",
         "admin": false
     }
