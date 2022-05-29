@@ -9,26 +9,22 @@ function Navbar() {
         setShow(!show);
     }
     const navClassName = function ({ isActive }) {
-        return (isActive) ? 'navbar__link navbar__link--active' : 'navbar__link';
+        return (isActive) ? 'link link--active' : 'link';
     }
     return (
         <div className="navbar">
-            <div className="navbar__brand">
-                <img className="navbar__logo" src={logo} alt="logo" />
+            <div className="brand">
+                <img className="logo" src={logo} alt="logo" />
                 <p>LoserBot</p>
             </div>
-            <div className={(show) ? "navbar__menu navbar__menu__active" : "navbar__menu"}>
+            <div className={(show) ? "menu menu--active" : "menu"}>
                 <NavLink to="/" className={navClassName}>Home</NavLink>
                 <NavLink to="/commands" className={navClassName}>Commands</NavLink>
                 <NavLink to="/donate" className={navClassName}>Donate</NavLink>
             </div>
-            <button className="navbar__toggle" onClick={handleToggleShow}>
+            <button className="toggle" onClick={handleToggleShow}>
                 {
-                    (show)
-                    ?
-                    <FaTimes className="navbar__toggle__icon" />
-                    :
-                    <FaBars className="navbar__toggle__icon" />
+                    (show) ? <FaTimes className="icon" /> : <FaBars className="icon" />
                 }
             </button>
         </div>

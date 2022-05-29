@@ -9,6 +9,7 @@
     outline: none;
     border-radius: sz(0);
     transition: all 150ms linear;
+    flex-shrink: 0;
 }
 body {
     background-color: $primary;
@@ -32,6 +33,19 @@ a {
     }
     &--static {
         height: calc(100vh - sz(4));
+        > .card {
+            padding: sz(4);
+            width: sz(9);
+            max-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: scroll;
+            background-color: $secondary;
+            @include tablet {
+                width: 100%;
+            }
+        }
     }
     &--scroll {
         height: auto;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import Command from '../../components/Command';
 import data from './data.json';
 
 function Commands() {
@@ -21,13 +20,22 @@ function Commands() {
     }
     return (
         <div className="main main--scroll commands">
-            <div className="commands__search">
-                <FaSearch className="commands__search__icon" />
-                <input type="text" placeholder="search" value={search} onChange={handleChangeSearch} className="commands__search__input" />
+            <div className="search">
+                <FaSearch className="icon" />
+                <input type="text" placeholder="search" value={search} onChange={handleChangeSearch} />
             </div>
             {
                 data.sort(sortAlphabetical).filter(filterSearch).map((command, i) => (
-                    <Command data={command} key={i} />
+                    <div className="command" key={i}>
+                        <div className="top">
+                            <div className="name">{command.name}</div>
+                            {
+                                command.admin && <div className="admin">Admin</div>
+                            }
+                        </div>
+                        <div className="description">{command.description}</div>
+                        <div className="usage">{command.usage}</div>
+                    </div>
                 ))
             }
         </div>

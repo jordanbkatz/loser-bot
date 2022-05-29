@@ -1,34 +1,69 @@
 @use '../../styles/style' as *;
 
 .commands {
-    &__search {
-        padding: 0 sz(3);
+    > .search {
+        position: relative;
         width: sz(9);
         height: sz(3);
-        background-color: $secondary;
-        display: flex;
-        align-items: center;
-        &:hover, &:hover &__input {
+        &:hover, &:hover > input {
             background-color: $tertiary;
         }
         @include tablet {
             width: 100%;
         }
-        @include mobile {
-            padding: 0 sz(1);
-        }
-        &__icon {
+        > .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: sz(3);
             font-size: sz(1);
-            margin-right: sz(1);
             color: $text;
         }
-        &__input {
-            padding: sz(1) 0;
+        > input {
+            padding: 0 sz(4);
             height: 100%;
             width: 100%;
             background-color: $secondary;
             font-size: sz(1);
             color: $text;
+            &:hover, &:focus {
+                background-color: $tertiary;
+            }
+        }
+    }
+    > .command {
+        width: sz(9);
+        margin-top: sz(3);
+        padding: sz(3);
+        background-color: $secondary;
+        @include tablet {
+            width: 100%;
+        }
+        @include mobile {
+            margin-top: sz(2);
+            padding: sz(2);
+        }
+        > .top {
+            height: sz(3);
+            margin-bottom: sz(2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            > .name {
+                font-size: sz(2); 
+            }
+            > .admin {
+                padding: sz(1);
+                background-color: $accent;
+            }
+        }
+        > .description {
+            margin-bottom: sz(2);
+            line-height: sz(2);
+        }
+        > .usage {
+            padding: sz(1);
+            background-color: $tertiary;
         }
     }
 }

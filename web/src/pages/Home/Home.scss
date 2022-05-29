@@ -1,27 +1,18 @@
 @use '../../styles/style' as *;
 
 .home {
-    &__card {
-        padding: sz(4);
-        width: sz(9);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: $secondary;
-        @include tablet {
-            width: 100%;
+    > .card {
+        > .content {
+            font-size: sz(2);
+            margin-bottom: sz(4);
         }
-    }
-    &__content {
-        font-size: sz(2);
-        margin-bottom: sz(4);
-    }
-    &__invite {
-        padding: sz(1);
-        background-color: $accent;
-        color: $text;
-        &:hover {
-            opacity: 0.75;
+        > .invite {
+            padding: sz(1);
+            background-color: $accent;
+            color: $text;
+            &:hover {
+                opacity: 0.75;
+            }
         }
     }
 }

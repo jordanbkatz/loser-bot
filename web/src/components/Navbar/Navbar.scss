@@ -16,18 +16,18 @@
     @include mobile {
         padding: sz(2);
     }
-    &__brand {
+    > .brand {
         font-weight: bold;
         font-size: sz(2);
         display: flex;
         align-items: center;
+        > .logo {
+            margin-right: sz(1);
+            width: sz(3);
+            height: sz(3);
+        }
     }
-    &__logo {
-        margin-right: sz(1);
-        width: sz(3);
-        height: sz(3);
-    }
-    &__menu {
+    > .menu {
         @include tablet {
             position: fixed;
             top: sz(4);
@@ -40,22 +40,22 @@
             display: none;
             background-color: $secondary;
         }
-        &__active {
+        &--active {
             display: flex;
         }
-    }
-    &__link {
-        padding: sz(1);
-        margin-left: sz(2);
-        color: $text;
-        &:hover {
-            background-color: $tertiary;
+        > .link {
+            padding: sz(1);
+            margin-left: sz(2);
+            color: $text;
+            &:hover {
+                background-color: $tertiary;
+            }
+            &--active {
+                color: $accent;
+            }
         }
-        &--active {
-            color: $accent;
-        }
     }
-    &__toggle {
+    > .toggle {
         display: none;
         background-color: $secondary;
         &:hover {
@@ -65,7 +65,7 @@
             display: flex;
             align-items: center;
         }
-        &__icon {
+        > .icon {
             font-size: sz(2);
             color: $text;
         }
