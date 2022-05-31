@@ -1,7 +1,6 @@
-import axios from "axios";
+const axios = require('axios');
 
-async function Meme({ client }) {
-    const res = new client.discord.MessageEmbed();
+module.exports = async function ({ res }) {
     const limit = 100;
     try {
         const memes = await axios.get(`https://www.reddit.com/r/dankmemes/hot/.json?limit=${limit}`);
@@ -13,6 +12,4 @@ async function Meme({ client }) {
         console.log(err);
         return res.setTitle("failed to fetch meme");
     }
-};
-
-export default Meme;
+}

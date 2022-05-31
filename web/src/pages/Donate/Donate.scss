@@ -4,7 +4,7 @@
     > .card {
         > .options {
             width: sz(7);
-            margin-bottom: sz(3);
+            margin-bottom: sz(4);
             display: flex;
             justify-content: space-between;
             > .option {
@@ -20,10 +20,38 @@
                     background-color: $accent;
                 }
             }
+            @include mobile {
+                margin-bottom: sz(2);
+                width: 100%;
+            }
         }
         > .paypal {
             z-index: 0;
             width: sz(7);
+            @include mobile {
+                width: 100%;
+            }
+        }
+        > .donated {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            > .icon {
+                margin-bottom: sz(4);
+                font-size: sz(5);
+                color: $accent;
+                @include mobile {
+                    margin-bottom: sz(2);
+                    font-size: sz(4);
+                }
+            }
+            > .description {
+                font-size: sz(2);
+                text-align: center;
+                @include mobile {
+                    font-size: sz(1);
+                }
+            }
         }
     }
 }

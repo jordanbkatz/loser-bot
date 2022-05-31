@@ -1,7 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-async function Kanye({ client }) {
-    const res = new client.discord.MessageEmbed();
+module.exports = async function ({ res }) {
     try {
         const quote = await axios.get("https://api.kanye.rest/");
         return res.setTitle("Kanye").setDescription(`"${quote.data.quote}"`);
@@ -10,6 +9,4 @@ async function Kanye({ client }) {
         console.log(err);
         return res.setTitle("failed to fetch Kanye quote");
     }
-};
-
-export default Kanye;
+}

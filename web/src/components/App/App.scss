@@ -45,6 +45,9 @@ a {
             @include tablet {
                 width: 100%;
             }
+            @include mobile {
+                padding: sz(2);
+            }
         }
     }
     &--scroll {

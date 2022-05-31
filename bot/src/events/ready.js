@@ -1,7 +1,5 @@
-function Ready({ client }) {
+module.exports = function ({ bot }) {
     return function () {
-        console.log(`Logged in to Discord as ${client.user.tag}.`);
+        console.log(`Logged in as ${bot.user.tag}`);
     };
 }
-
-export default Ready;

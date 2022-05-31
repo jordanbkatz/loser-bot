@@ -1,7 +1,6 @@
-import akaneko from 'akaneko';
+const akaneko = require('akaneko');
 
-async function Hentai({ client, args }) {
-    let res = new client.discord.MessageEmbed();
+module.exports = async function ({ args, res }) {
     if (args[0]) {
         if (!(args[0] in akaneko.nsfw)) {
             return res.setTitle("invalid akaneko nsfw category");
@@ -18,6 +17,4 @@ async function Hentai({ client, args }) {
     else {
         return res.setTitle("specifiy akaneko nsfw category");
     }
-};
-
-export default Hentai;
+}

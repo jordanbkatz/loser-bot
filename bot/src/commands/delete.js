@@ -1,5 +1,4 @@
-async function Delete({ client, msg, args }) {
-    const res = new client.discord.MessageEmbed();
+module.exports = async function ({ msg, args, res }) {
     if (msg.channel.type == "dm") {
         return res.setTitle("cannot delete messages in this channel");
     }
@@ -22,5 +21,3 @@ async function Delete({ client, msg, args }) {
         return res.setTitle("specify how many messages you want to send");
     }
 };
-
-export default Delete;

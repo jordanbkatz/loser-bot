@@ -1,12 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar';
-import Home from '../../pages/Home';
-import Commands from '../../pages/Commands';
-import Donate from '../../pages/Donate';
-import Error from '../../pages/Error';
+import { Home, Commands, Donate, Error } from '../../pages';
 
-function App() {
+export default function () {
     return (
         <Router>
             <Navbar />
@@ -19,5 +16,3 @@ function App() {
         </Router>
     );
 }
-
-export default App;

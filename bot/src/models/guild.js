@@ -1,7 +1,5 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-const guild = mongoose.model('guild', new mongoose.Schema({
+module.exports = mongoose.model('guild', new mongoose.Schema({
     cooldown: Number
 }));
-
-export default guild;

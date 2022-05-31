@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaSadTear } from 'react-icons/fa';
 
-function Error() {
+export default function () {
     return (
         <div className="main main--static error">
             <div className="card">
@@ -13,5 +13,3 @@ function Error() {
         </div>
     );
 }
-
-export default Error;

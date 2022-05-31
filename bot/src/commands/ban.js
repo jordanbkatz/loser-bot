@@ -1,10 +1,11 @@
-async function Ban({ client, msg }) {
-    const res = new client.discord.MessageEmbed();
+const { Permissions } = require('discord.js');
+
+module.exports = async function ({ msg, res }) {
     const member = msg.mentions.users.first();
     if (!member) {
         return res.setTitle("specify member");
     }
-    if (!msg.member.permissions.has(client.discord.Permissions.FLAGS.ADMINISTRATOR)) {
+    if (!msg.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
         return res.setTitle("you dont have permissions");
     }
     const memberTarget = msg.guild.members.cache.get(member.id);
@@ -16,6 +17,4 @@ async function Ban({ client, msg }) {
         console.log(err);
         return res.setTitle("failed to ban user");
     }
-};
-
-export default Ban;
+}

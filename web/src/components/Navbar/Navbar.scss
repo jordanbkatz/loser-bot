@@ -17,14 +17,15 @@
         padding: sz(2);
     }
     > .brand {
-        font-weight: bold;
-        font-size: sz(2);
         display: flex;
         align-items: center;
         > .logo {
             margin-right: sz(1);
             width: sz(3);
             height: sz(3);
+        }
+        > .name {
+            font-size: sz(2);
         }
     }
     > .menu {

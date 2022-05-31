@@ -1,7 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-async function Joke({ client }) {
-    const res = new client.discord.MessageEmbed();
+module.exports = async function ({ res }) {
     try {
         const joke = await axios.get("https://v2.jokeapi.dev/joke/Dark");
         return res.setTitle(joke.data.setup).setDescription(joke.data.delivery);
@@ -10,6 +9,4 @@ async function Joke({ client }) {
         console.log(err);
         return res.setTitle("error");
     }
-};
-
-export default Joke;
+}

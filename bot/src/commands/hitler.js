@@ -1,7 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-async function Hitler({ client }) {
-    const res = new client.discord.MessageEmbed();
+module.exports = async function ({ res }) {
     try {
         const quote = await axios.get("https://hitler-api.herokuapp.com");
         return res.setTitle("Hitler").setDescription(`"${quote.data}"`);
@@ -10,6 +9,4 @@ async function Hitler({ client }) {
         console.log(err);
         return res.setTitle("failed to get hitler quote");
     }
-};
-
-export default Hitler;
+}

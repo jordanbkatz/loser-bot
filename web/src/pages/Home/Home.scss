@@ -5,13 +5,25 @@
         > .content {
             font-size: sz(2);
             margin-bottom: sz(4);
+            text-align: center;
+            @include mobile {
+                margin-bottom: sz(2);
+            }
         }
-        > .invite {
-            padding: sz(1);
-            background-color: $accent;
-            color: $text;
-            &:hover {
-                opacity: 0.75;
+        > .links {
+            display: flex;
+            align-items: center;
+            > .link {
+                margin-right: sz(1);
+                padding: sz(1);
+                background-color: $accent;
+                color: $text;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+                &:hover {
+                    opacity: 0.75;
+                }
             }
         }
     }

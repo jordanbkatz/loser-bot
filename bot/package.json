@@ -1,7 +1,8 @@
 {
+  "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "dependencies": {
     "akaneko": "^5.2.2",
@@ -11,10 +12,8 @@
     "dotenv": "^16.0.1",
     "mathjs": "^10.5.3",
     "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16",
     "yt-search": "^2.10.3",
     "ytdl-core": "^4.11.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
   }
 }

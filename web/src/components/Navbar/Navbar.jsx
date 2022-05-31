@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../assets/images/logo.png';
 
-function Navbar() {
+export default function () {
     const [show, setShow] = useState(false);
     const handleToggleShow = function () {
         setShow(!show);
@@ -15,7 +15,7 @@ function Navbar() {
         <div className="navbar">
             <div className="brand">
                 <img className="logo" src={logo} alt="logo" />
-                <p>LoserBot</p>
+                <h1 className="name">LoserBot</h1>
             </div>
             <div className={(show) ? "menu menu--active" : "menu"}>
                 <NavLink to="/" className={navClassName}>Home</NavLink>
@@ -30,5 +30,3 @@ function Navbar() {
         </div>
     );
 }
-
-export default Navbar;
