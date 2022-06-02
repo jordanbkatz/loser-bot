@@ -1,11 +1,11 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports = function ({ bot }) {
+function Message({ bot }) {
     return async function (msg) {
         if (msg.author.bot) {
             return;
         }
-        if (msg.content.startsWith('$loser')) {
+        if (msg.content.startsWith('$L')) {
             let res = new MessageEmbed();
 
             // check cooldown
@@ -19,15 +19,17 @@ module.exports = function ({ bot }) {
                     res = await command({ msg, args, res });
                 }
                 catch (err) {
-                    console.log(err);
+                    res.setTitle(err.message);
                 }
             }
             else {
-                res.setTitle("invalid command");
+                res.setTitle('invalid command');
             }
 
             res.setColor('#df208f');
             msg.channel.send(res);
         }
-    };
+    }
 }
+
+module.exports = Message;

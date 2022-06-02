@@ -1,6 +1,6 @@
 const { Permissions } = require('discord.js');
 
-module.exports = async function ({ msg, res }) {
+async function Ban({ msg, res }) {
     const member = msg.mentions.users.first();
     if (!member) {
         return res.setTitle("specify member");
@@ -18,3 +18,5 @@ module.exports = async function ({ msg, res }) {
         return res.setTitle("failed to ban user");
     }
 }
+
+module.exports = Ban;

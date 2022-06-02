@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function () {
+function Home() {
     return (
         <div className="main main--static home">
             <div className="card">
@@ -13,3 +13,5 @@ export default function () {
         </div>
     );
 }
+
+export default Home;

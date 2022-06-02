@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-module.exports = mongoose.model('member', new mongoose.Schema({
+const MemberSchema = new mongoose.Schema({
     user: String,
     guild: String,
     xp: Number,
     ignore: Boolean
-}));
+});
+
+module.exports = mongoose.model('member', MemberSchema);

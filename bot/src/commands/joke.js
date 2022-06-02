@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-module.exports = async function ({ res }) {
+async function Joke({ res }) {
     try {
         const joke = await axios.get("https://v2.jokeapi.dev/joke/Dark");
         return res.setTitle(joke.data.setup).setDescription(joke.data.delivery);
@@ -10,3 +10,5 @@ module.exports = async function ({ res }) {
         return res.setTitle("error");
     }
 }
+
+module.exports = Joke;

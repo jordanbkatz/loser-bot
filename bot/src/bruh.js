@@ -24,7 +24,7 @@ client.on("message", async function (msg) {
     if (msg.author.bot) {
         return;
     }
-    if (msg.content.startsWith('$loser')) {
+    if (msg.content.startsWith('$L')) {
         let res = new Discord.MessageEmbed();
 
         if ((Date.now() - last) / 1000 >= process.env.COOLDOWN) {

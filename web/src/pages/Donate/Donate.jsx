@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { FaCheck } from 'react-icons/fa';
 
-export default function () {
+function Donate() {
     const [donated, setDonated] = useState(false);
     const [amount, setAmount] = useState(1);
     const options = [1, 5, 10, 25];
@@ -62,3 +62,5 @@ export default function () {
         </div>
     );
 }
+
+export default Donate;

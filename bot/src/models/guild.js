@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
-module.exports = mongoose.model('guild', new mongoose.Schema({
+const GuildSchema = new mongoose.Schema({
     cooldown: Number
-}));
+});
+
+module.exports = mongoose.model('guild', GuildSchema);

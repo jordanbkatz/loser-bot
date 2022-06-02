@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar';
 import { Home, Commands, Donate, Error } from '../../pages';
 
-export default function () {
+function App() {
     return (
         <Router>
             <Navbar />
@@ -16,3 +16,5 @@ export default function () {
         </Router>
     );
 }
+
+export default App;

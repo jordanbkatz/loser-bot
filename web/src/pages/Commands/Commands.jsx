@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import data from './data.json';
 
-export default function () {
+function Commands() {
     const [search, setSearch] = useState('');
     const handleChangeSearch = function (e) {
         setSearch(e.target.value);
@@ -41,3 +41,5 @@ export default function () {
         </div>
     );
 }
+
+export default Commands;

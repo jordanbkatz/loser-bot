@@ -20,16 +20,20 @@ const bot = new Client();
 bot.commands = {};
 bot.cooldowns = {};
 
-const commands = fs.readdirSync(path.join(__dirname, 'commands')).map(f => f.split('.')[0]);
-for (let i = 0; i < commands.length; i++) {
-    const command = require(`./commands/${commands[i]}`);
-    bot.commands[commands[i]] = command;
+function loadir(dir, handler) {
+    const files = fs.readdirSync(path.join(__dirname, dir)).map(f => f.split('.')[0]);
+    for (let i = 0; i < files.length; i++) {
+        const file = require(`./${dir}/${files[i]}`);
+        handler(files[i], file);
+    }
 }
 
-const events = fs.readdirSync(path.join(__dirname, 'events')).map(f => f.split('.')[0]);
-for (let i = 0; i < events.length; i++) {
-    const event = require(`./events/${events[i]}`);
-    bot.on(events[i], event({bot}));
-}
+loadir('commands', function (name, command) {
+    bot.commands[name] = command;
+});
+
+loadir('events', function (name, event) {
+    bot.on(name, event({bot}));
+});
 
 bot.login(process.env.DISCORD_TOKEN);

@@ -1,4 +1,4 @@
-module.exports = async function ({ msg, args, res }) {
+async function Delete({ msg, args, res }) {
     if (msg.channel.type == "dm") {
         return res.setTitle("cannot delete messages in this channel");
     }
@@ -20,4 +20,6 @@ module.exports = async function ({ msg, args, res }) {
     else {
         return res.setTitle("specify how many messages you want to send");
     }
-};
+}
+
+module.exports = Delete;

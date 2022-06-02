@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-module.exports = async function ({ res }) {
+async function Hitler({ res }) {
     try {
         const quote = await axios.get("https://hitler-api.herokuapp.com");
         return res.setTitle("Hitler").setDescription(`"${quote.data}"`);
@@ -10,3 +10,5 @@ module.exports = async function ({ res }) {
         return res.setTitle("failed to get hitler quote");
     }
 }
+
+module.exports = Hitler;
