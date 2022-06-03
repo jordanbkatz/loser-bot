@@ -17,6 +17,7 @@ dotenv.config();
 })();
 
 const bot = new Client();
+bot.prefix = '$L';
 bot.commands = {};
 bot.cooldowns = {};
 

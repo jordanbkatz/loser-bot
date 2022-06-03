@@ -1,6 +1,6 @@
 async function Delete({ msg, args, res }) {
-    if (msg.channel.type == "dm") {
-        return res.setTitle("cannot delete messages in this channel");
+    if (msg.channel.type == 'dm') {
+        return res.setTitle('cannot delete messages in this channel');
     }
     else if (args[0]) {
         const amount = parseInt(args[0]);
@@ -10,11 +10,12 @@ async function Delete({ msg, args, res }) {
                 return res.setTitle(`deleted ${amount} messages`);
             }
             catch (err) {
+                console.log(err.message);
                 return res.setTitle("failed to delete messages");
             }
         }
         else {
-            return res.setTitle("amount must be between ");
+            return res.setTitle("amount must be between 0 and 100");
         }
     }
     else {

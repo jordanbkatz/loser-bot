@@ -5,7 +5,7 @@ function Message({ bot }) {
         if (msg.author.bot) {
             return;
         }
-        if (msg.content.startsWith('$L')) {
+        if (msg.content.startsWith(bot.prefix)) {
             let res = new MessageEmbed();
 
             // check cooldown
@@ -19,7 +19,8 @@ function Message({ bot }) {
                     res = await command({ msg, args, res });
                 }
                 catch (err) {
-                    res.setTitle(err.message);
+                    console.log(err.message);
+                    res.setTitle('failed to execute command');
                 }
             }
             else {
