@@ -37,10 +37,10 @@ a {
             padding: sz(4);
             width: sz(9);
             max-height: 100%;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: scroll;
             background-color: $secondary;
             @include tablet {
                 width: 100%;

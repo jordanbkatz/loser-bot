@@ -43,6 +43,7 @@ client.on("message", async function (msg) {
             else {
                 res.setTitle("invalid command");
             }
+            last = Date.now();
         }
         else {
             const timeRemaining = ((process.env.COOLDOWN * 1000 + last) - Date.now()) / 1000;

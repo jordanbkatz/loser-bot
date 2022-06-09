@@ -2,39 +2,61 @@ const fs = require('fs');
 const path = require('path');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const { Client } = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 
 dotenv.config();
 
-(async function () {
-    try {
-        // await mongoose.connect(process.env.MONGO_URI);
-        console.log('Connected to database');
-    }
-    catch (err) {
-        console.log(err.message);
-    }
-})();
+// await mongoose.connect(process.env.MONGO_URI);
 
 const bot = new Client();
 bot.prefix = '$L';
 bot.commands = {};
 bot.cooldowns = {};
 
-function loadir(dir, handler) {
-    const files = fs.readdirSync(path.join(__dirname, dir)).map(f => f.split('.')[0]);
-    for (let i = 0; i < files.length; i++) {
-        const file = require(`./${dir}/${files[i]}`);
-        handler(files[i], file);
+const categories = fs.readdirSync(path.join(__dirname, 'commands'));
+for (let i = 0; i < categories.length; i++) {
+    const commands = fs.readdirSync(path.join(__dirname, `commands/${categories[i]}`));
+    for (let j = 0; j < commands.length; j++) {
+        const command = require(`./commands/${categories[i]}/${commands[j]}`);
+        bot.commands[commands[j].split('.')[0]] = command;
     }
 }
 
-loadir('commands', function (name, command) {
-    bot.commands[name] = command;
-});
+const cooldown = 3;
 
-loadir('events', function (name, event) {
-    bot.on(name, event({bot}));
+bot.on('message', async function (msg) {
+    console.log(msg.channel.guild.id);
+    if (msg.author.bot) {
+        return;
+    }
+    if (msg.content.startsWith(bot.prefix)) {
+        let res = new MessageEmbed();
+        const gid = msg.channel.guild.id;
+        if (!(gid in bot.cooldowns) || (Date.now() - bot.cooldowns[gid]) / 1000 >= cooldown) {
+            let args = msg.content.split(/\s+/);
+            args.shift();
+            let command = bot.commands[args[0]];
+            args.shift();
+            if (command) {
+                try {
+                    res = await command({ msg, args, res });
+                }
+                catch (err) {
+                    res.setTitle('failed to execute command');
+                }
+            }
+            else {
+                res.setTitle('invalid command');
+            }
+            bot.cooldowns[gid] = Date.now();
+        }
+        else {
+            const timeRemaining = ((cooldown * 1000 + bot.cooldowns[gid]) - Date.now()) / 1000;
+            res.setTitle(`please wait ${timeRemaining} seconds for cooldown to end`);
+        }
+        res.setColor('#df208f');
+        msg.channel.send(res);
+    }
 });
 
 bot.login(process.env.DISCORD_TOKEN);

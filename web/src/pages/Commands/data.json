@@ -40,5 +40,65 @@
         "description": "Get a random Adolf Hitler quote",
         "usage": "$L hitler",
         "admin": false
+    },
+    {
+        "name": "ban",
+        "description": "Ban a member from the server",
+        "usage": "$L ban <@user>",
+        "admin": true
+    },
+    {
+        "name": "help",
+        "description": "Get help",
+        "usage": "$L help",
+        "admin": false
+    },
+    {
+        "name": "math",
+        "description": "Evaluate a mathematical expression",
+        "usage": "$L math <expression>",
+        "admin": false
+    },
+    {
+        "name": "joke",
+        "description": "Get an offensive joke",
+        "usage": "$L joke",
+        "admin": false
+    },
+    {
+        "name": "delete",
+        "description": "Delete certain amount of messages from a message channel",
+        "usage": "$L delete <amount>",
+        "admin": true
+    },
+    {
+        "name": "hentai",
+        "description": "Get random hentai content",
+        "usage": "$L hentai <category>",
+        "admin": false
+    },
+    {
+        "name": "ignore",
+        "description": "Make bot ignore commands from certain user",
+        "usage": "$L ignore <user>",
+        "admin": true
+    },
+    {
+        "name": "rand",
+        "description": "Get a random number between a minimum and maximum",
+        "usage": "$L rand <min> <max>",
+        "admin": false
+    },
+    {
+        "name": "flex",
+        "description": "Flex your own xp",
+        "usage": "$L flex",
+        "admin": false
+    },
+    {
+        "name": "leaderboard",
+        "description": "See server xp rankings",
+        "usage": "$L leaderboard",
+        "admin": false
     }
 ]
