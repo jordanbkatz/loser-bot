@@ -8,7 +8,7 @@ import express from 'express';
 import cors from 'cors';
 import Stat from './models/stat.js';
 dotenv.config();
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.DB_URI);
 const bot = new discord.Client();
 bot.prefix = '$L';
 bot.cooldown = 3;
