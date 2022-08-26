@@ -34,14 +34,10 @@
         }
         > .command {
             width: 100%;
-            margin-top: 25px;
-            padding: 15px;
+            margin-top: 35px;
+            padding: 25px;
             border-radius: $radius;
             box-shadow: $shadow $secondary;
-            @include breakpoint(sm) {
-                margin-top: 35px;
-                padding: 25px;
-            }
             > .header {
                 height: 50px;
                 margin-bottom: 25px;
