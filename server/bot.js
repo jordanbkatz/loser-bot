@@ -4,21 +4,24 @@ import url from 'url';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import discord from 'discord.js';
-import express from 'express';
-import cors from 'cors';
 import Stat from './models/stat.js';
+
 dotenv.config();
+
 mongoose.connect(process.env.DB_URI);
+
 const bot = new discord.Client();
 bot.prefix = '$L';
 bot.cooldown = 3;
 bot.commands = {};
 bot.cooldowns = {};
+
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 fs.readdirSync(path.join(__dirname, 'commands')).forEach(async command => {
     bot.commands[command.split('.')[0]] = (await import(`./commands/${command}`)).default;
 });
+
 bot.on('message', async msg => {
     if (!msg.author.bot && msg.content.startsWith(bot.prefix)) {
         const res = new discord.MessageEmbed();
@@ -54,16 +57,5 @@ bot.on('message', async msg => {
         msg.channel.send(res);
     }
 });
+
 bot.login(process.env.DISCORD_TOKEN);
-const app = express();
-app.use(cors());
-app.get('/stats', async (req, res) => {
-    try {
-        const count = await Stat.countDocuments({ type: req.query.type });
-        res.status(200).json({ count });
-    }
-    catch (err) {
-        res.status(500).json({ err: err.message });
-    }
-});
-app.listen(process.env.PORT || 6969);
