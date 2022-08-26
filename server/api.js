@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import express from 'express';
 import cors from 'cors';
-import Stat from './models/stat';
+import Stat from './models/stat.js';
 
 dotenv.config();
 
