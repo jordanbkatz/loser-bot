@@ -11,7 +11,7 @@ const Stats = () => {
     const prevStat = () => setIndex(index !== 0 ? index - 1 : types.length - 1);
     useEffect(() => {
         const getStat = async (type) => {
-            const { data } = await axios(`http://localhost:6969/stats?type=${type}`);
+            const { data } = await axios(`https://jbk-loserbot.herokuapp.com/stats?type=${type}`);
             setValue(data.count);
         };
         getStat(types[index]);
