@@ -1,0 +1,64 @@
+.commands {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    > .container {
+        width: 100%;
+        max-width: 750px;
+        padding: 35px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        > .search {
+            width: 100%;
+            height: 100px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: $radius;
+            box-shadow: $shadow $secondary;
+            > input {
+                width: 100%;
+                height: 50px;
+                padding: 15px;
+                border-radius: $radius;
+                box-shadow: $shadow $secondary;
+                &:hover, &:focus {
+                    box-shadow: $shadow $accent;
+                } 
+            }
+        }
+        > .command {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: $radius;
+            box-shadow: $shadow $secondary;
+            @include breakpoint(sm) {
+                margin-top: 35px;
+                padding: 25px;
+            }
+            > .header {
+                height: 50px;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            > .description {
+                margin-bottom: 25px;
+                line-height: 35px;
+            }
+            > .usage {
+                padding: 15px;
+                border-radius: $radius;
+                box-shadow: $shadow $accent;
+                color: $accent;
+            }
+        }
+    }
+}
