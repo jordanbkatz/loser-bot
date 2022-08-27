@@ -15,7 +15,7 @@ const Navbar = () => {
                 <h1 className="name">LoserBot</h1>
             </div>
             <div className={`menu ${show ? 'active' : ''}`}>
-                <NavLink to="/" className={linkClassName} onClick={handleCloseMenu}>Home</NavLink>
+                <NavLink to="/home" className={linkClassName} onClick={handleCloseMenu}>Home</NavLink>
                 <NavLink to="/commands" className={linkClassName} onClick={handleCloseMenu}>Commands</NavLink>
                 <NavLink to="/stats" className={linkClassName} onClick={handleCloseMenu}>Stats</NavLink>
             </div>
