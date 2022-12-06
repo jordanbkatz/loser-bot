@@ -1,58 +1,32 @@
 .home {
-    position: absolute;
-    top: 70px;
-    left: 0px;
     width: 100%;
-    height: calc(100vh - 70px);
-    padding: 35px;
+    max-width: 750px;
+    height: calc(100vh - 140px);
     display: flex;
-    justify-content: center;
-    > .container {
+    align-items: center;
+    .card {
         width: 100%;
-        max-width: 750px;
-        height: 100%;
+        padding: 35px;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        > .card {
-            width: 100%;
-            padding: 35px;
-            border-radius: $radius;
-            box-shadow: $shadow $secondary;
-            > .header {
-                margin-bottom: 35px;
-                text-align: left;
-                @include breakpoint(sm) {
-                    margin-bottom: 50px;
-                }
+        text-align: center;
+        border-radius: 7px;
+        border: 1px solid $secondary;
+        .header {
+            margin-bottom: 35px;
+            text-align: center;
+            @include desktop {
+                margin-bottom: 50px;
             }
-            > .links {
-                display: flex;
-                align-items: center;
-                > .link {
-                    margin-right: 15px;
-                    padding: 15px;
-                    border-radius: $radius;
-                    &:last-of-type {
-                        margin-right: 0;
-                    }
-                    &.invite {
-                        background-color: $accent;
-                        color: $primary;
-                        box-shadow: $shadow $accent;
-                        &:hover {
-                            opacity: $opacity;
-                        }
-                    }
-                    &.support {
-                        box-shadow: $shadow $secondary;
-                        color: $text;
-                        &:hover {
-                            box-shadow: $shadow $accent;
-                            color: $accent;
-                        }
-                    }
-                }
+        }
+        .link {
+            padding: 17.5px;
+            background-color: $accent;
+            color: $primary;
+            border-radius: 7px;
+            &:hover {
+                opacity: .7;
             }
         }
     }

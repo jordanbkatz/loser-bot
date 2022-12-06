@@ -3,77 +3,83 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    padding: 0px 35px;
     width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: $primary;
-    box-shadow: $shadow $secondary;
-    @include breakpoint(lg) {
+    border-bottom: 1px solid $secondary;
+    @include mobile {
+        padding: 0px 35px;
+    }
+    @include desktop {
         padding: 0px 70px;
     }
     .brand {
         display: flex;
         align-items: center;
         .logo {
-            margin-right: 15px;
+            margin-right: 17.5px;
             width: 50px;
             height: 50px;
         }
     }
     .menu {
-        position: fixed;
-        top: 70px;
-        left: 0px;
-        width: 100%;
-        height: calc(100vh - 70px);
+        z-index: 1;
         display: none;
-        flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
         background-color: $primary;
-        @include breakpoint(lg) {
+        border-bottom: 1px solid $secondary;
+        @include mobile {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+        }
+        @include desktop {
             position: relative;
-            top: 0px;
-            width: auto;
-            height: 50px;
+            top: 0;
             display: flex;
-            flex-direction: row;
         }
         &.active {
             display: flex;
         }
         .link {
-            padding: 15px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: $text;
-            border-radius: $radius;
-            @include breakpoint(lg) {
-                margin-left: 35px;
+            @include mobile {
+                width: 100%;
             }
-            &:first-of-type {
-                margin-left: 0px;
+            @include desktop {
+                &:not(:last-of-type) {
+                    margin-right: 35px;
+                }
             }
-            &:hover {
-                box-shadow: $shadow $secondary;
-            }
-            &.active {
+            &:hover, &.active {
                 color: $accent;
+                cursor: pointer;
             }
         }
     }
     .toggle {
-        display: flex;
         align-items: center;
+        background-color: $primary;
+        @include mobile {
+            display: flex;
+        }
+        @include desktop {
+            display: none;
+        }
         &:hover {
             cursor: pointer;
         }
-        @include breakpoint(lg) {
-            display: none;
-        }
         .icon {
-            font-size: 25px;
+            font-size: 35px;
             color: $text;
             background-color: $primary;
         }

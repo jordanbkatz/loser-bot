@@ -1,10 +1,10 @@
-@mixin breakpoint($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media (min-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
+@mixin mobile {
+    @media (max-width: $breakpoint) {
+        @content;
     }
-    @else {
-        @error "invalid breakpoint: #{$breakpoint}";
+}
+@mixin desktop {
+    @media (min-width: $breakpoint) {
+        @content;
     }
 }

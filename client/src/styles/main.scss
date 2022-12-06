@@ -1,12 +1,16 @@
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';
+@import
+    'abstracts/variables',
+    'abstracts/mixins';
 
-@import 'base/base';
-@import 'base/typography';
+@import
+    'base/base',
+    'base/typography';
 
-@import 'components/navbar';
+@import 
+    'components/layout',
+    'components/navbar';
 
-@import 'pages/commands';
-@import 'pages/home';
-@import 'pages/stats';
+@import
+    'pages/commands',
+    'pages/home',
+    'pages/stats';

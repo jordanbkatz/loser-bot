@@ -3,13 +3,4 @@ $primary: white;
 $secondary: lightgrey;
 $text: black;
 $accent: crimson;
-$opacity: 0.70;
-$shadow: 0 0 5px 0;
-$radius: 10px;
-$breakpoints: (
-    xs: 250px,
-    sm: 500px,
-    md: 750px,
-    lg: 1000px,
-    xl: 1250px
-);
+$breakpoint: 1000px;
