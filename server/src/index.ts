@@ -49,7 +49,7 @@ bot.on('message', async (msg: discord.Message) => {
         if (!Object.keys(bot.cooldowns).includes(gid) || (Date.now() - bot.cooldowns[gid]) / 1000 >= bot.cooldown) {
             let args = msg.content.split(/\s+/);
             args.shift();
-            const command = bot.commands[args[0]] || bot.commands.unknown;
+            const command = bot.commands[args[0]] || bot.commands.help;
             args.shift();
             await command({ msg, args, res });
             bot.cooldowns[gid] = Date.now();

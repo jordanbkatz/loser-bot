@@ -10,11 +10,6 @@ const commandList = [
         usage: "$L meme"
     },
     {
-        name: "karma",
-        description: "Get karma of a reddit user",
-        usage: "$L karma <username>"
-    },
-    {
         name: "help",
         description: "Get help",
         usage: "$L help"
