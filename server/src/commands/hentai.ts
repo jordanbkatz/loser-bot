@@ -26,7 +26,6 @@ const Hentai: Command = async ({ args, res }) => {
     if (!success) {
         res.setDescription(`categories: ${categories.join(', ')}`);
     }
-
 };
 
 export default Hentai;
