@@ -1,21 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 import discord from 'discord.js';
-import { Command } from './models/command';
+import { ICommand } from './models/command';
 
 class Bot extends discord.Client {
     prefix: string;
     cooldown: number;
     cooldowns: {[gid: string]: number};
-    commands: {[name: string]: Command};
+    commands: ICommand[];
     constructor(prefix: string, cooldown: number) {
         super();
         this.prefix = prefix;
         this.cooldown = cooldown;
         this.cooldowns = {};
-        this.commands = {};
+        this.commands = [];
         fs.readdirSync(path.join(__dirname, './commands')).forEach(command => {
-            this.commands[command.split('.')[0]] = require(`./commands/${command}`).default;
+            this.commands.push(require(`./commands/${command}`).default);
         });
     }
 }

@@ -13,9 +13,19 @@ bot.on('message', async (msg: discord.Message) => {
         if (!Object.keys(bot.cooldowns).includes(gid) || (Date.now() - bot.cooldowns[gid]) / 1000 >= bot.cooldown) {
             let args = msg.content.split(/\s+/);
             args.shift();
-            const command = bot.commands[args[0]] || bot.commands.help;
+            const command = bot.commands.find(command => command.name === args[0]);
             args.shift();
-            await command({ msg, args, res });
+            if (command) {
+                await command.run({ msg, args, res });
+            }
+            else {
+                res.setTitle('Unknown Command');
+                res.setDescription('Here is a list of commands:');
+                res.addFields(bot.commands.map(command => ({
+                    name: command.name, 
+                    value: command.description 
+                })));
+            }
             bot.cooldowns[gid] = Date.now();
         }
         else {
